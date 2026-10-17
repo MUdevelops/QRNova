@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-white font-sans text-ink antialiased; }
+  :focus-visible { outline: 2px solid #6D4AFF; outline-offset: 2px; border-radius: 6px; }
+  ::selection { background: #D2CAFF; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+}
+
+@layer components {
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-nova-600 text-white hover:bg-nova-700; }
+  .btn-secondary { @apply btn border border-line bg-white text-ink hover:border-nova-200 hover:bg-nova-50; }
+  .btn-ghost { @apply btn min-h-[40px] px-3 text-ink-soft hover:bg-surface hover:text-ink; }
+  .field-label { @apply mb-1.5 block text-sm font-medium text-ink; }
+  .field { @apply w-full rounded-xl border border-line bg-white px-3.5 py-3 text-base text-ink placeholder:text-ink-muted/70 transition-colors hover:border-nova-200 focus:border-nova-500 focus:outline-none focus:ring-2 focus:ring-nova-500/20 sm:text-sm; }
+  .hint { @apply mt-1.5 text-xs text-ink-muted; }
+}

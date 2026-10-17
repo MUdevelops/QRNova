@@ -1,0 +1,17 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QRNova">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7B3FF2"/>
+      <stop offset="1" stop-color="#16B8F3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="29" cy="31" r="19" fill="none" stroke="url(#g)" stroke-width="9"/>
+  <g fill="url(#g)">
+    <rect x="25" y="27" width="5" height="5" rx="1"/>
+    <rect x="32" y="27" width="5" height="5" rx="1"/>
+    <rect x="25" y="34" width="5" height="5" rx="1"/>
+    <rect x="40" y="43" width="7" height="7" rx="1.5"/>
+    <rect x="48" y="51" width="7" height="7" rx="1.5"/>
+  </g>
+  <path d="M52 4l2.2 5.8L60 12l-5.8 2.2L52 20l-2.2-5.8L44 12l5.8-2.2z" fill="#FF5CA8"/>
+</svg>

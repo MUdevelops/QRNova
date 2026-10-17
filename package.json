@@ -1,0 +1,33 @@
+{
+  "name": "qrnova",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "QRNova — free online QR code generator (images, links and text).",
+  "scripts": {
+    "dev": "vite",
+    "dev:netlify": "npx netlify-cli dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.1.0",
+    "@netlify/blobs": "^8.1.0",
+    "lucide-react": "^0.460.0",
+    "qr-code-styling": "^1.8.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "engines": { "node": ">=18.18" }
+}

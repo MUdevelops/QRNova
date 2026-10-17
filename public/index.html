@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QRNova: free QR code generator</title>
+  <meta name="description" content="Turn a link, text or image into a QR code. Free, no sign-up. Download as PNG or SVG.">
+  <meta name="theme-color" content="#F5F3FF">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/" aria-label="QRNova home">
+      <img src="/assets/logo.svg" alt="" width="40" height="40">
+      <span class="wordmark">QRNova</span>
+    </a>
+    <p class="tagline">Create. Scan. Connect.</p>
+  </header>
+
+  <main class="tool">
+    <section class="controls" aria-labelledby="h">
+      <h1 id="h">What should your QR code open?</h1>
+
+      <div class="tabs" role="tablist" aria-label="QR code type">
+        <button role="tab" id="tab-link" aria-controls="panel-link" aria-selected="true">Link</button>
+        <button role="tab" id="tab-text" aria-controls="panel-text" aria-selected="false" tabindex="-1">Text</button>
+        <button role="tab" id="tab-image" aria-controls="panel-image" aria-selected="false" tabindex="-1">Image</button>
+      </div>
+
+      <div id="panel-link" role="tabpanel" aria-labelledby="tab-link">
+        <label for="in-link">Web address</label>
+        <input id="in-link" type="url" inputmode="url" placeholder="https://example.com" autocomplete="off">
+      </div>
+
+      <div id="panel-text" role="tabpanel" aria-labelledby="tab-text" hidden>
+        <label for="in-text">Your text</label>
+        <textarea id="in-text" rows="5" placeholder="Wi-Fi password, a note, a phone number…"></textarea>
+        <p class="hint" id="count">0 characters</p>
+      </div>
+
+      <div id="panel-image" role="tabpanel" aria-labelledby="tab-image" hidden>
+        <label for="in-image" class="drop" id="drop">
+          <span id="drop-label">Choose a JPG, PNG or WebP image</span>
+          <span class="hint">Scanning the code opens your image. Up to 4 MB.</span>
+        </label>
+        <input id="in-image" type="file" accept="image/jpeg,image/png,image/webp" class="sr">
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </div>
+
+      <fieldset class="style">
+        <legend>Style</legend>
+        <div class="row">
+          <label class="color"><span>Code color</span><input id="fg" type="color" value="#3B1FA8"></label>
+          <label class="color"><span>Background</span><input id="bg" type="color" value="#FFFFFF"></label>
+        </div>
+        <div class="row">
+          <label class="sel"><span>Dots</span>
+            <select id="shape"><option value="square">Square</option><option value="round">Rounded</option></select>
+          </label>
+          <label class="sel"><span>Error correction</span>
+            <select id="ec"><option value="L">Low</option><option value="M" selected>Medium</option><option value="Q">Quartile</option><option value="H">High</option></select>
+          </label>
+        </div>
+        <p class="warn" id="contrast" hidden>Low contrast. Use a darker code color on a lighter background so phones can scan it.</p>
+      </fieldset>
+    </section>
+
+    <section class="result" aria-label="Preview">
+      <div class="frame">
+        <canvas id="qr" width="1024" height="1024" aria-label="Your QR code"></canvas>
+        <p class="empty" id="empty">Your QR code appears here</p>
+      </div>
+      <p class="error" id="error" role="alert" hidden></p>
+      <div class="actions">
+        <button class="primary" id="dl-png" disabled>Download PNG</button>
+        <button class="secondary" id="dl-svg" disabled>Download SVG</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>QRNova is free. Links and text never leave your browser. Images are stored only to serve the link in your code.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
