@@ -74,7 +74,6 @@
 
 </div>
 
-> Put your screenshots in `docs/screenshots/` with the file names above.
 
 ---
 
