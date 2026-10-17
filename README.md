@@ -2,7 +2,7 @@
 
 Create. Scan. Connect. QRNova turns **images, links and text** into customizable QR codes. Built with React, TypeScript, Vite, Tailwind CSS 3 and [`qr-code-styling`](https://github.com/kozakdenys/qr-code-styling). Deploys to Netlify as-is.
 
-> **Status:** the code was written without network access, so `npm install`, the build and the browser flows could **not** be run before delivery. Work through [TESTING.md](./TESTING.md) after your first install and deploy. If `npm run typecheck` reports anything, it will be a small type nit to fix.
+> **Status:** `npm run typecheck` and `npm run build` pass. Work through [TESTING.md](./TESTING.md) to verify the browser flows after deployment.
 
 ## What it does
 
